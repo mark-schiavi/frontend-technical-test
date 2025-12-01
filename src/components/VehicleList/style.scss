@@ -1,3 +1,25 @@
-.VehicleList {
+@import "../../styles/variables";
+
+.vehicle-list {
+  gap: 0px;
+  padding: 0px;
   width: 100%;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include tablet {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    align-items: center;
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
