@@ -1,14 +1,15 @@
-import ModalPopup from '../modals/VehicleDetailsModal/ModalPopup';
+import ModalPopup from '../modals/ModalPopup/ModalPopup';
 import useVehicleDetailsButton from '../../hooks/useVehicleDetailsButton';
-import VehicleDetailsModal from '../modals/VehicleDetailsModal/VehicleDetailsModal';
+import ModalVehicleDetails from '../modals/ModalVehicleDetails/ModalVehicleDetails';
 
 export default function VehicleDetailsButton({ vehicle }) {
   const { open, handleOpen, handleClose } = useVehicleDetailsButton(vehicle);
 
   return (
     <p>
-      <button
-        type="button"
+      <a
+        href="#!"
+        role="button"
         className="vehicle-card__show-details"
         aria-haspopup="dialog"
         aria-controls={`vehicle-modal-${vehicle.id}`}
@@ -16,14 +17,14 @@ export default function VehicleDetailsButton({ vehicle }) {
         onClick={handleOpen}
       >
         Read more &gt;
-      </button>
+      </a>
       {open && (
         <ModalPopup
           open={open}
           onClose={handleClose}
           id={`modal-popup-${vehicle.id}`}
         >
-          <VehicleDetailsModal />
+          <ModalVehicleDetails />
         </ModalPopup>
       )}
     </p>

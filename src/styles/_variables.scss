@@ -4,21 +4,23 @@ $tablet-max: 1023px;
 $desktop-min: 1024px;
 
 @mixin mobile {
-    @media (max-width: $mobile-max) {
-        @content;
-    }
+  @media (max-width: $mobile-max) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-        @content;
-    }
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media (min-width: $desktop-min) {
-        @content;
-    }
+  @media (min-width: $desktop-min) {
+    @content;
+  }
 }
 
 $active-border-color: #ffd600;
+$close-modal-text-color: #222;
+$details-separator-color: rgb(235, 239, 239) 1px solid;
