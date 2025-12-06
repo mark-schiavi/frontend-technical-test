@@ -1,0 +1,51 @@
+@import "../../../styles/variables";
+
+.vehicle-details-modal {
+    &__title {
+        color: #333;
+        font-family: "LandRover-Bold", sans-serif;
+        font-size: 24px;
+        margin: 0 0 16px;
+        text-transform: uppercase;
+
+        @include mobile {
+            font-size: 20px;
+            margin: 0 0 12px;
+        }
+    }
+
+    &__content {
+        color: #4a4a4a;
+    }
+
+    &__description {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 0 20px;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__detail {
+        align-items: flex-start;
+        border-bottom: 1px solid #e0e0e0;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 4px;
+            padding: 8px 0;
+        }
+    }
+}

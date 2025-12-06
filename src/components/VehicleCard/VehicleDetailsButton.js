@@ -1,6 +1,6 @@
-import React from 'react';
-import VehicleDetailsModal from '../modals/VehicleDetailsModal';
+import ModalPopup from '../modals/VehicleDetailsModal/ModalPopup';
 import useVehicleDetailsButton from '../../hooks/useVehicleDetailsButton';
+import VehicleDetailsModal from '../modals/VehicleDetailsModal/VehicleDetailsModal';
 
 export default function VehicleDetailsButton({ vehicle }) {
   const { open, handleOpen, handleClose } = useVehicleDetailsButton(vehicle);
@@ -18,12 +18,13 @@ export default function VehicleDetailsButton({ vehicle }) {
         Read more &gt;
       </button>
       {open && (
-        <VehicleDetailsModal
-          vehicle={vehicle}
+        <ModalPopup
           open={open}
           onClose={handleClose}
-          id={`vehicle-modal-${vehicle.id}`}
-        />
+          id={`modal-popup-${vehicle.id}`}
+        >
+          <VehicleDetailsModal />
+        </ModalPopup>
       )}
     </p>
   );

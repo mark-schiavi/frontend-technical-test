@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import getData from '../api';
+import getData from '../api/api';
 
 // Get a list of vehicles asynchronously...
 export const getVehicles = createAsyncThunk(

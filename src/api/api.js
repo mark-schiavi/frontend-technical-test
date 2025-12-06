@@ -29,12 +29,17 @@ export default async function getData() {
       }
     });
 
-    const vehiclesWithDetails = await Promise.all(vehicleDetailsPromises);
+    const results = await Promise.allSettled(vehicleDetailsPromises);
+    const vehiclesWithDetails = results
+      .filter(
+        (result) => result.status === 'fulfilled'
+                    && result.value
+                    && result.value.price
+                    && result.value.price.trim() !== ''
+      )
+      .map((result) => result.value);
 
-    // Filter out failed requests and vehicles without prices...
-    return vehiclesWithDetails.filter(
-      (vehicle) => vehicle && vehicle.price && vehicle.price.trim() !== ''
-    );
+    return vehiclesWithDetails;
   } catch (error) {
     console.error('Error fetching vehicle data:', error);
     throw error;

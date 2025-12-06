@@ -1,4 +1,3 @@
-import React from 'react';
 import VehicleDetailsButton from './VehicleDetailsButton';
 
 export default function VehicleDetails({ vehicle }) {

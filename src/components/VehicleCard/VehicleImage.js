@@ -1,5 +1,4 @@
-import React from 'react';
-import './style.scss';
+import './VehicleCard.scss';
 
 export default function VehicleImage({ vehicle }) {
   return (

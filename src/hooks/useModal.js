@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 
-export default function useVehicleDetailsModal(open, onClose) {
+export default function useModal(open, onClose) {
   const dialogRef = useRef(null);
 
   useEffect(() => {
